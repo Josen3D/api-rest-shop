@@ -9,7 +9,8 @@ export const validatorCreateJob = [
     .exists()
     .notEmpty()
     .isString()
-    .isLength({ min: 3, max: 100 }),
+    .isLength({ min: 3, max: 100 })
+    .toLowerCase(),
 
   // validates the result data
   (req, res, next) => {

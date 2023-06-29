@@ -12,6 +12,7 @@ const Job = sequelize.define(
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
+      unique: true,
     },
     description: {
       type: DataTypes.STRING(150),
