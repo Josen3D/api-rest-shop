@@ -53,7 +53,7 @@ CREATE TABLE clients(
     town VARCHAR(45) NOT NULL,
     township VARCHAR(45) NOT NULL,
     state VARCHAR(45) NOT NULL,
-    postcode TINYINT(5) NOT NULL,
+    postcode INT(5) NOT NULL,
     PRIMARY KEY (rfc)
 );
 

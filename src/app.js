@@ -5,13 +5,12 @@ import express from "express";
 // import cors
 import cors from "cors";
 
-// import mysql connection
-import { dbConect } from "./database/mysql.js";
-
 // import categoryRoutes
 import categoryRoutes from "./routes/category.routes.js";
 // import product routes
 import productRoutes from "./routes/product.routes.js";
+// import client routes
+import clientRoutes from "./routes/client.routes.js";
 
 // create express app
 const app = express();
@@ -20,20 +19,17 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const PORT = process.env.PORT || 3000;
-
-app.
-use("/api", categoryRoutes)
-.use("/api", productRoutes);
+app
+  .use("/api", categoryRoutes)
+  .use("/api", productRoutes)
+  .use("/api", clientRoutes);
 
 // if endpoint doesnt exist, send an error message
 app.use((req, res, next) => {
-  res.send({
+  res.status(404).json({
     message: "endpoint not found",
   });
 });
 
-// put server to listen
-app.listen(PORT, () => console.log("Server running on port:", PORT));
-// connect to DB
-dbConect();
+// export express app
+export default app;

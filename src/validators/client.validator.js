@@ -5,7 +5,12 @@ import { validateResult } from "../utils/validator.handler.js";
 
 // create validators for createClient
 export const validatorCreateClient = [
-  check("rfc").exists().notEmpty().isString().isLength({ min: 10, max: 15 }),
+  check("rfc")
+    .exists()
+    .notEmpty()
+    .isString()
+    .isLength({ min: 10, max: 15 })
+    .toUpperCase(),
   check("name").exists().notEmpty().isString().isLength({ min: 3, max: 50 }),
   check("address").exists().notEmpty().isString().isLength({ min: 3, max: 45 }),
   check("town").exists().notEmpty().isString().isLength({ min: 3, max: 40 }),

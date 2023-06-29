@@ -10,13 +10,17 @@ const Client = sequelize.define(
     rfc: {
       type: DataTypes.STRING(15),
       allowNull: false,
+      unique: true,
       primaryKey: true,
+      validate: {
+        is: /^([A-Z]){3}([0-9]){6}([A-Z0-9]){3}$/,
+      },
     },
     name: {
       type: DataTypes.STRING(100),
       allowNull: false,
       validate: {
-        is: /^[a-zA-Z]\s$/,
+        is: /^[a-zA-ZáéíóúÁÉÍÓÚ\s]+$/,
       },
     },
     address: {
@@ -36,7 +40,7 @@ const Client = sequelize.define(
       allowNull: false,
     },
     postcode: {
-      type: DataTypes.TINYINT,
+      type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
         isInt: true,
