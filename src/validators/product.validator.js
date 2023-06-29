@@ -5,7 +5,7 @@ import { validateResult } from "../utils/validator.handler.js";
 
 // create validators for createProduct
 export const validatorCreateProduct = [
-  check("name").exists().notEmpty().isLength({ min: 3, max: 50 }),
+  check("name").exists().notEmpty().isString().isLength({ min: 3, max: 50 }),
   check("price").exists().notEmpty(),
   check("iva").exists().notEmpty(),
   check("quantity").exists().notEmpty(),

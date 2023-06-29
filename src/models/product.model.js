@@ -16,6 +16,9 @@ const Product = sequelize.define(
     name: {
       type: DataTypes.STRING(100),
       allowNull: false,
+      validate: {
+        is: /^[a-zA-Z]/
+      }
     },
     price: {
       type: DataTypes.DECIMAL(10, 2),
