@@ -7,7 +7,7 @@ const Employee = sequelize.define(
   "employee",
   {
     // define model attributes
-    key: {
+    idkey: {
       type: DataTypes.STRING(15),
       allowNull: false,
       unique: true,

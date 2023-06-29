@@ -5,7 +5,7 @@ import { validateResult } from "../utils/validator.handler.js";
 
 // create validators for createEmployee
 export const validatorCreateEmployee = [
-  check("key")
+  check("idkey")
     .exists()
     .notEmpty()
     .isString()
@@ -15,8 +15,7 @@ export const validatorCreateEmployee = [
   check("address").exists().notEmpty().isString().isLength({ min: 3, max: 45 }),
   check("phone").exists().notEmpty().isString().isLength({ min: 10, max: 10 }),
   check("idjob").exists().notEmpty().isInt(),
-
-  ,
+  
   // validates the result data
   (req, res, next) => {
     return validateResult(req, res, next);

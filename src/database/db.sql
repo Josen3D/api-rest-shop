@@ -58,12 +58,12 @@ CREATE TABLE clients(
 );
 
 CREATE TABLE employees(
-    key VARCHAR(15) NOT NULL,
+    idkey VARCHAR(15) NOT NULL,
     name VARCHAR(200) NOT NULL,
     address VARCHAR(250) NOT NULL,
     phone VARCHAR(15) NOT NULL,
     idjob INT NOT NULL,
-    PRIMARY KEY (key),
+    PRIMARY KEY (idkey),
     FOREIGN KEY (idjob) REFERENCES jobs(idjob)
 );
 
