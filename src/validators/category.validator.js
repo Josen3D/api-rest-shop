@@ -5,8 +5,8 @@ import { validateResult } from "../utils/validator.handler.js";
 
 // create validators for createCategory
 export const validatorCreateCategory = [
-  check("description").exists().notEmpty().isLength({ min: 3, max: 50 }),
-  check("abbreviation").exists().notEmpty().isLength({ min: 2, max: 8 }),
+  check("description").exists().notEmpty().isString().isLength({ min: 3, max: 50 }),
+  check("abbreviation").exists().notEmpty().isString().isLength({ min: 2, max: 8 }),
 
   // validates the result data
   (req, res, next) => {
