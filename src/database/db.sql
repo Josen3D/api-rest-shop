@@ -40,10 +40,10 @@ CREATE TABLE tickets(
     iva DECIMAL(5,2) NOT NULL,
     total DECIMAL(10,2) NOT NULL,
     rfc VARCHAR(15) NOT NULL,
-    key VARCHAR(15) NOT NULL,
+    idkey VARCHAR(15) NOT NULL,
     PRIMARY KEY (consecutive),
     FOREIGN KEY (rfc) REFERENCES clients(rfc),
-    FOREIGN KEY (key) REFERENCES employees(key)
+    FOREIGN KEY (idkey) REFERENCES employees(idkey)
 );
 
 CREATE TABLE clients(
