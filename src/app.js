@@ -11,6 +11,8 @@ import categoryRoutes from "./routes/category.routes.js";
 import productRoutes from "./routes/product.routes.js";
 // import client routes
 import clientRoutes from "./routes/client.routes.js";
+// import jobRoutes
+import jobRoutes from "./routes/job.routes.js";
 
 // create express app
 const app = express();
@@ -22,7 +24,8 @@ app.use(cors());
 app
   .use("/api", categoryRoutes)
   .use("/api", productRoutes)
-  .use("/api", clientRoutes);
+  .use("/api", clientRoutes)
+  .use("/api", jobRoutes);
 
 // if endpoint doesnt exist, send an error message
 app.use((req, res, next) => {
