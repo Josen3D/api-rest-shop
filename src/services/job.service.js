@@ -18,8 +18,8 @@ export const createNewJob = async (puesto) => {
   return responseCreate;
 };
 
-export const updateOneJob = async (id, categoryUpdated) => {
-  const responseUpdate = await JobModel.update(categoryUpdated, {
+export const updateOneJob = async (id, jobUpdated) => {
+  const responseUpdate = await JobModel.update(jobUpdated, {
     where: { idjob: id },
   });
   return responseUpdate;
