@@ -13,8 +13,8 @@ export const getOneTicket = async (id) => {
   return responseGet;
 };
 
-export const createNewTicket = async (product) => {
-  const responseCreate = await TicketModel.create(product);
+export const createNewTicket = async (ticket) => {
+  const responseCreate = await TicketModel.create(ticket);
   return responseCreate;
 };
 

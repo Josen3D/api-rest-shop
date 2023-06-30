@@ -12,6 +12,7 @@ import clientRoutes from "./routes/client.routes.js";
 import jobRoutes from "./routes/job.routes.js";
 import employeeRoutes from "./routes/employee.routes.js";
 import ticketRoutes from "./routes/ticket.routes.js";
+import saleRoutes from "./routes/sale.routes.js";
 
 // create express app
 const app = express();
@@ -26,7 +27,8 @@ app
   .use("/api", clientRoutes)
   .use("/api", jobRoutes)
   .use("/api", employeeRoutes)
-  .use("/api", ticketRoutes);
+  .use("/api", ticketRoutes)
+  .use("/api", saleRoutes);
 
 // if endpoint doesnt exist, send an error message
 app.use((req, res, next) => {

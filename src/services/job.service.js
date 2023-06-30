@@ -13,8 +13,8 @@ export const getOneJob = async (id) => {
   return responseGet;
 };
 
-export const createNewJob = async (puesto) => {
-  const responseCreate = await JobModel.create(puesto);
+export const createNewJob = async (job) => {
+  const responseCreate = await JobModel.create(job);
   return responseCreate;
 };
 
