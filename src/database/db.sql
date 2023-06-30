@@ -22,6 +22,7 @@ CREATE TABLE products(
 );
 
 CREATE TABLE sales(
+    id INT(11) NOT NULL AUTO_INCREMENT,
     code INT NOT NULL,
     consecutive INT NOT NULL,
     quantity INT NOT NULL,
@@ -29,6 +30,7 @@ CREATE TABLE sales(
     subtotal DECIMAL(10,2) NOT NULL,
     iva DECIMAL(5,2) NOT NULL,
     total DECIMAL(10,2) NOT NULL,
+    PRIMARY key (id),
     FOREIGN KEY (code) REFERENCES products(code),
     FOREIGN KEY (consecutive) REFERENCES ticket(consecutive)
 );
