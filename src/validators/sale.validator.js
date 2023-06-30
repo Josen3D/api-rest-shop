@@ -8,7 +8,7 @@ export const validatorCreateSale = [
   check("code").exists().notEmpty().isInt(),
   check("consecutive").exists().notEmpty().isInt().isLength({ min: 3 }),
   check("quantity").exists().notEmpty().isInt(),
-  check("unitaty").exists().notEmpty(),
+  check("unitary").exists().notEmpty(),
   check("subtotal").exists().notEmpty(),
   check("iva").exists().notEmpty(),
   check("total").exists().notEmpty(),
